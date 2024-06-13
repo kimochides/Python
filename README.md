@@ -1,2 +1,2 @@
 # Python
-Simple python programs, data types
+Simple python programs
