@@ -1,0 +1,416 @@
+DAY 1:
+Write a program to:
+1. Read the marks of a student, if marks >80, distinction. Between 60 and 80, pass. <60 fail. Otherwise, invalid.
+2. Check if a number is prime or not.
+=> 
+num=int(input("Enter a number:"))
+p=int(num/2)
+for i in range(1,p+1):
+    if(num%i==0):
+        if(i!=1):
+            print("Not Prime")
+            break
+    else:
+        print("Prime")
+
+-----------------------------------------------------------------------------------------
+
+3. Generate all prime numbers in a given range.
+=>
+num1=int(input("Enter the starting number:"))
+num2=int(input("Enter the ending number:"))
+count=0
+for i in range(num1,num2+1):
+    for num in range(2,i):
+        if i%num==0:
+            break
+    else:
+            print(i)
+	    count=count+1
+print("Total number of prime numbers:",count)
+
+-------------------------------------------------------------------------------------------
+
+4. Check whether a number is a strong number or not. 
+=> A number whose sum of factorial of individual digits is equal to the number itself is known as a strong number.
+
+-------------------------------------------------------------------------------------------
+5. Check whether a given number is Armstrong or not.
+=> Sum of the individual numbers in a number that is powered to the length of the number, is the number itself.
+num=int(input("Enter a number:"))
+temp=num
+sums=0
+order=len(str(num))
+while(num!=0):
+    r=num%10
+    d=r**order
+    sums=sums+d
+    num=num//10
+if temp==sums:
+    print("The given number ",temp,"is an armstrong number.")
+else:
+    print("The given number",temp,"is not an armstrong number")
+
+-------------------------------------------------------------------------------------------
+
+6. Check if a number is happy or not.
+=> A number is said to be happy if the sum of the squares of the individual digits iteratively leads to 1. If it leads to 4, it's an unhappy number.
+def isHappy(num):
+    sums=0
+    while(num!=0):
+        r=num%10
+        sums=sums+r**2
+        num=num//10
+    return sums
+n=int(input("Enter a number:"))
+temp=n
+while(n!=1 and n!=4):
+    n=isHappy(n)
+if(n==1):
+    print("True")
+elif(n==4):
+    print("False")
+
+-------------------------------------------------------------------------------------------
+
+7. Check if a number is neon or not.
+=> The sum of the individual numbers of the square of a digit is the digit itself.
+num=int(input("Enter the number:"))
+square=num**2
+sums=0
+while(square!=0):
+    r=square%10
+    sums=sums+r
+    square=square//10
+if(num==sums):
+    print(num," is a Neon number.")
+else:
+    print(num," is not a Neon number.")
+
+-------------------------------------------------------------------------------------------
+
+8. Check if a number is spy or not.
+=> If the sum of all the digits of a number is equal to the product of all the digits of a number, then the number is a spy number.
+num=int(input("Enter a number:"))
+temp=num
+sum=0
+prod=1
+while(num!=0):
+    r=num%10
+    sum=sum+r
+    prod=prod*r
+    num=num//10
+if(sum==prod):
+    print(temp,"is a Spy number")
+else:
+    print(temp,"is not a Spy number")
+
+------------------------------------------------------------------------------------------
+
+9. Generate the Fibonacci series of a given number n.
+=>
+num=int(input("Enter the range:"))
+fib1=0
+fib2=1
+print(fib1,fib2,end=" ")
+for i in range(2,num):
+    fib3=fib1+fib2
+    print(fib3,end=" ")
+    fib1=fib2
+    fib2=fib3
+
+------------------------------------------------------------------------------------------
+
+10. Check if a number is palindrome or not.
+11. Convert a number from negative to positive.
+12. Find factorial of a given number.
+=> 
+num=int(input("Enter a number:"))
+while(num!=0):
+    f=1
+    i=1
+    while(i<=num):
+        f=f*i
+        i=i+1
+    print("Factorial of",num,"is",f)
+    break
+if(num<0):
+    print("INVALID")
+if(num==0):
+    print("Factorial of 0 is 1")
+
+------------------------------------------------------------------------------------------
+
+13. Display multiplication table
+=>
+n=int(input("Enter a number:"))
+print("The multiplication table of",n,"is:")
+for i in range(1,11):
+    prod=n*i
+    print(n,"x",i,"=",prod)
+
+------------------------------------------------------------------------------------------
+
+14. Check if a year is leap or not.
+
+DAY 2:
+Write a python program to:
+1. To find the best of two test average marks out of three test marks accepted from the user.
+2. Develop a python program to convert a binary number into decimal, octal and hexadecimal numbers using functions.
+3. Defined a function as Fn =Fn-1 + Fn-2. Write a python program which accepts a value for N (where N>0) as input and pass this value to the function. Display suitable error message if the condition for input value isn't followed.
+4. Write a python program to find string similarity between two similar string.
+5. Write a python program that accepts a sentence and finds the number of words, digits, uppercase letters and lowercase letters.
+6. 
+*
+* *
+* * *
+* * * *
+* * * * *
+=> 
+n=int(input("Enter a range(n x n):"))
+for i in range(0,n):
+    for j in range(0,n):
+        if(j<=i):
+            print("*",end=" ")
+    print()
+
+---------------------------------------------------------------------------------------------
+
+7. 
+        *
+      * *
+    * * *
+  * * * *
+* * * * *
+=>
+n=int(input("Enter a range(n x n):"))
+for i in range(0,n):
+    for j in range(0,n):
+        if(i+j>=n-1):
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+
+---------------------------------------------------------------------------------------------
+
+8. 
+* * * * *
+  * * * *
+    * * *
+      * *
+        *
+=>
+n=int(input("Enter a range(n x n):"))
+for i in range(0,n):
+    for j in range(0,n):
+        if(j>=i):
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+
+---------------------------------------------------------------------------------------------
+
+9.
+* * * * *
+* * * *
+* * *
+* *
+*
+=>
+n=int(input("Enter a range(n x n):"))
+for i in range(0,n):
+    for j in range(0,n):
+        if(i+j<=n-1):
+            print("*",end=" ")
+    print()
+
+---------------------------------------------------------------------------------------------
+
+10.
+* * * * *
+* * * * *
+* * * * * 
+* * * * *
+* * * * *
+=>
+n=int(input("Enter a range(n x n):"))
+for i in range(0,n):
+    for j in range(0,n):
+        print("*",end=" ")
+    print()
+
+-----------------------------------------------------------------------------------------------
+
+11.
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5 
+=>
+n=int(input("Enter a range(n x n):"))
+for i in range(0,n):
+    for j in range(0,n):
+            if(j<=i):
+                print(j+1,end=" ")
+    print()
+
+----------------------------------------------------------------------------------------------
+
+12.
+1 
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+=>
+n=int(input("Enter a range(n x n):"))
+for i in range(0,n):
+    for j in range(0,n):
+        if(j<=i):
+            print(i+1,end=" ")
+    print()
+
+----------------------------------------------------------------------------------------------
+
+13.
+* * * * *
+*	*
+* 	*
+*	*
+* * * * *
+14. 
+* * * * *
+* *   * *
+*   * * *
+* *   * *
+* * * * *
+=>
+n=int(input("Enter the range:(n x n):"))
+for i in range(0,n):
+    for j in range(0,n):
+        if (i==0 or i==n-1 or j==0 or j==n-1 or i==j or i+j==n-1):
+            print("*",end=" ")
+        else:
+                print(" ",end=" ")
+    print()
+
+-----------------------------------------------------------------------------------------------
+
+15.
+1  2  3  4 
+5  6  7  8
+9  10 11 12
+13 14 15 16
+=>
+n=int(input("Enter the range (n x n):"))
+k=1
+for i in range(0,n):
+    for j in range(0,n):
+            print(k,end=" ")
+            k=k+1
+    print()
+
+----------------------------------------------------------------------------------------------
+
+16. User input for the character to be printed. Here, character to be printed=A
+A A A A A 
+A A A A A
+A A A A A 
+A A A A A
+A A A A A
+=>
+n=int(input("Enter the range (n x n):"))
+char=input("Enter the character:")
+for i in range(0,n):
+    for j in range(0,n):
+            print(char,end=" ")
+    print()
+
+-----------------------------------------------------------------------------------------------
+
+17. Read a string from user, and implement a logic to remove the characters which are at the odd numbers of the index.
+=>
+str=input("Enter a string:")
+n=len(str)
+a=""
+for i in range(0,n):
+    if(i%2==0):
+        a=a+str[i]
+print(a)
+
+-----------------------------------------------------------------------------------------------
+
+18. Swap two numbers using a third variable.
+=> 
+a=int(input("Enter the first number:"))
+b=int(input("Enter the second number:"))
+print("Numbers before swapping:",a,b)
+c=a
+a=b
+b=c
+print("Numbers after swapping:",a,b)
+
+-----------------------------------------------------------------------------------------------
+
+19. Swap two numbers without using a third variable.
+=>
+a=int(input("Enter the first number:"))
+b=int(input("Enter the second number:"))
+print("Numbers before swapping:",a,b)
+a=a+b
+b=a-b
+a=a-b
+print("Numbers after swapping:",a,b)
+
+OR
+a=int(input("Enter the first number:"))
+b=int(input("Enter the second number:"))
+print("Numbers before swapping:",a,b)
+a,b=b,a
+print("Numbers after swapping:",a,b)
+
+-----------------------------------------------------------------------------------------------
+
+DAY 3
+Write a program to:
+1. Swap first and last element of a list
+2. Find first and last element in a list.
+3. Count the number of occurrences of a given item in the list.
+=>
+def counts(li,x):
+    count=0
+    for i in li:
+            if i==x:
+                count=count+1
+    return count
+li=[1,2,4,4,5,3,5,2,5,6,4]
+print("The list is:",li)
+x=int(input("Enter the element whose occurence is to be known:"))
+print("Ocurrances of",x,"is",counts(li,x))
+
+------------------------------------------------------------------------------------------------
+
+4. Count the unique values in a list.
+5. Find out the duplicate removal list products using list comprehension
+6. Extract elements with a frequency greater than k.
+7. Test if a list contains elements in a range.
+8. Demonstrate list intersection and union.
+9. Merge two sorted lists into a single sorted list.
+10. Find the largest sub-array sum of a given list.
+11. Partition a list around a given value such that all elements less than the given value come before it and all elements greater than the given value come after it.
+12. Find the peak element in a list of integers. Peak element is an element that is greater than or equal to it's neighbors. (All left and right neighbours)
+
+DAY 5
+Write a program to:
+1. Convert a decimal number to binary
+2. Convert any base to decimal
+
+DAY 6:
+1. Given an array of n numbers and another number x, the task is to check whether or not there exists two elements in the array whose exact sum is x.
+
+DAY 7:
+1. Write a python program to create a class representing a shopping cart, include methods for adding and removing items, and calculating total price.
+

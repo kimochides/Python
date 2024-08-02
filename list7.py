@@ -1,0 +1,12 @@
+list=["orange","mango","kiwi","pineapple","banana"]
+list.sort()
+print(list)
+list1=["orange","mango","kiwi","pineapple","banana"]
+list1.sort(reverse=True)
+print(list1)
+list2=[100,50,65,82,23]
+list2.sort()
+print(list2)
+list3=[100,50,65,82,23]
+list3.sort(reverse=True)
+print(list3)
